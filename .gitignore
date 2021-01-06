@@ -1,0 +1,10 @@
+# Editors
+.idea
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Dependency directory
+node_modules

@@ -1,0 +1,10 @@
+{
+  "name": "@strivestudio/body-ip-core",
+  "version": "0.0.1",
+  "description": "Library to contain any shared code for the BodyIP platform.",
+  "author": "Strive Studio",
+  "contributors": [
+    "Benjamin Bestmann <benjamin@strivestudio.de>"
+  ],
+  "homepage": "https://strivestudio.de/"
+}
