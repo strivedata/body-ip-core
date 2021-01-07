@@ -199,3 +199,18 @@ export interface UpdateData {
   foods: Date;
   supplements: Date;
 }
+
+export interface Asset {
+  url: string;
+  dataType: 'mp4' | 'jpeg' | 'mp3';
+}
+
+export interface GeneratorResult {
+  logEntries: LogEntry[];
+  userUpdate: {
+    currentWeek: number,
+    currentWeekCategory: string
+  };
+  video: string;
+  assets: Asset[]; // Used to store an array of all the assets for the generated training week
+}
