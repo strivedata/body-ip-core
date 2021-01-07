@@ -1,6 +1,6 @@
 {
   "name": "@strivestudio/body-ip-core",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Library to contain any shared code for the BodyIP platform.",
   "author": "Strive Studio",
   "contributors": [

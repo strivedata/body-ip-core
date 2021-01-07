@@ -41,6 +41,31 @@ export interface Food extends Entity {
   description?: string;
   step?: number; // The step size that will be used for the slider in the meal planner
   thumbnailUrl?: string; // URL that points to the image used as the thumbnail
+  checked?: boolean; // optional if used in the ingredient modal
+  amount?: number; // optional: if used as an ingredient in the meal planner
+}
+
+export interface Meal extends Entity {
+  name: string;
+  isEaten: boolean;
+  ingredients: Food[];
+  calories: number;
+  carbs: number;
+  protein: number;
+  fat: number;
+}
+
+export interface MealData {
+  [key: string]: Meal;
+}
+
+export interface NutritionLogData {
+  calories: number;
+  carbs: number;
+  protein: number;
+  fat: number;
+  meals: MealData;
+  mealsOrder?: string[]; // List of meal ids in the correct order used to sort them
 }
 
 export type ExerciseTypes = 'repsOnly' | 'repsAndWeight' | 'time';
@@ -56,15 +81,6 @@ export interface Exercise extends Entity {
   videoUrl?: string;
   thumbnailUrl?: string;
   thumbnailSmallUrl?: string;
-}
-
-export interface Plan extends Entity {
-  name: string;
-  daysPerWeek: number;
-  bodyFatCategories: number[];
-  isActive: boolean;
-  program?: 'default'; // Only allow 'default' until we support multiple programs
-  isProtected?: boolean; // Whether this is the default training plan for this program and should be protected
 }
 
 export interface TrainingWeek {
@@ -98,19 +114,6 @@ export interface NutritionStats {
   total: number;
   actual: number;
   remaining: number; // Total - Actual
-}
-
-export interface MealData {
-  [key: string]: Meal;
-}
-
-export interface NutritionLogData {
-  calories: number;
-  carbs: number;
-  protein: number;
-  fat: number;
-  meals: MealData;
-  mealsOrder?: string[]; // List of meal ids in the correct order used to sort them
 }
 
 export interface RestDayProtocol {
@@ -155,24 +158,14 @@ export interface Plan extends Entity {
   name: string;
   daysPerWeek: number;
   bodyFatCategories: number[];
-  program?: 'default'; // Only allow 'default' until we support multiple programs
   isActive: boolean;
+  program?: 'default'; // Only allow 'default' until we support multiple programs
   isProtected?: boolean; // Whether this is the default training plan for this program and should be protected
 }
 
 export interface ResultSet {
   set: Result;
   superSet?: Result;
-}
-
-export interface Meal extends Entity {
-  name: string;
-  isEaten: boolean;
-  ingredients: Food[];
-  calories: number;
-  carbs: number;
-  protein: number;
-  fat: number;
 }
 
 export interface Motivation extends Entity {
@@ -193,13 +186,13 @@ export interface ProgressData {
   currentPhoto: any;
 }
 
-export interface PerformanceData {
-  [key: string]: PerformanceSet;
-}
-
 export interface PerformanceSet {
   first: ResultSet;
   last: ResultSet;
+}
+
+export interface PerformanceData {
+  [key: string]: PerformanceSet;
 }
 
 export interface UpdateData {
