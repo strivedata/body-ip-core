@@ -209,7 +209,8 @@ export interface GeneratorResult {
   logEntries: LogEntry[];
   userUpdate: {
     currentWeek: number,
-    currentWeekCategory: string
+    currentWeekCategory: string,
+    receivedMotivations: any
   };
   video: string;
   assets: Asset[]; // Used to store an array of all the assets for the generated training week
