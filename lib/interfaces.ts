@@ -147,6 +147,7 @@ export interface LogEntry {
   training: TrainingLogData;
   motivation: MotivationLogData;
   video: string;
+  date?: string; // ISO string of the date for this day
 }
 
 export interface Result {
