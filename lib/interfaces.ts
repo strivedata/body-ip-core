@@ -81,6 +81,7 @@ export interface Exercise extends Entity {
   videoUrl?: string;
   thumbnailUrl?: string;
   thumbnailSmallUrl?: string;
+  isTwoSided?: boolean; // If true, exercise should be performed on both sides (e.g. legs) per set
 }
 
 export interface TrainingWeek {
