@@ -27,8 +27,11 @@ export interface UserProfile extends Entity {
   setupCompleted?: boolean;
   isAdmin?: boolean;
   receivedMotivations?: string[]; // An array of the id's of the motivation messages
-  goal?: 'lose-weight' | 'burn-fat' | 'tone-body' | 'gain-muscle'
+  goals?: TrainingGoal[]; // Array of selected training goals
+  programs?: string[]; // Array of programs the user has activated
 }
+
+export type TrainingGoal = 'lose-weight' | 'burn-fat' | 'tone-body' | 'gain-muscle';
 
 export type FoodCategories = 'carbs' | 'fat' | 'protein';
 
